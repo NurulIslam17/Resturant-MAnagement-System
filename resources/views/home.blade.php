@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <title>Klassy Cafe - Restaurant HTML Template</title>
+    <title>Klassy Cafe - Restaurant </title>
     <!--
     
 TemplateMo 558 Klassy Cafe
@@ -72,7 +72,7 @@ https://templatemo.com/tm-558-klassy-cafe
                         -->
                             <li class="scroll-to-section"><a href="#menu">Menu</a></li>
                             <li class="scroll-to-section"><a href="#chefs">Chefs</a></li>
-                            <li class="submenu">
+                            <!-- <li class="submenu">
                                 <a href="javascript:;">Features</a>
                                 <ul>
                                     <li><a href="#">Features Page 1</a></li>
@@ -80,7 +80,7 @@ https://templatemo.com/tm-558-klassy-cafe
                                     <li><a href="#">Features Page 3</a></li>
                                     <li><a href="#">Features Page 4</a></li>
                                 </ul>
-                            </li>
+                            </li> -->
                             <!-- <li class=""><a rel="sponsored" href="https://templatemo.com" target="_blank">External URL</a></li> -->
                             <li class="scroll-to-section"><a href="#reservation">Contact Us</a></li>
                             <li>
