@@ -114,7 +114,7 @@
                   <td>{{$data->email}}</td>
 
                   @if($data->usertype=="0")
-                  <td class="actionTd"><a href="{{url('/del/',$data->id)}}">Delete</a></td>
+                  <td class="actionTd"><a href="{{url('/del',$data->id)}}">Delete</a></td>
                   @else
                   <td class="actionTd">
                     <p>Not Allowed(Admin)</p>

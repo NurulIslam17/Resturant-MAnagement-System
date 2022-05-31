@@ -13,7 +13,7 @@ class AdminConteroller extends Controller
     }
 
     public function deleteUser($id){
-        $del = user::find($id);
+        $del = User::find($id);
         $del->delete();
         return redirect()->back();
     }
