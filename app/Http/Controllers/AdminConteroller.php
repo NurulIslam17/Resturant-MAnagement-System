@@ -35,9 +35,20 @@ class AdminConteroller extends Controller
         $data->image=$imageName;
         $data->Save();
         return redirect()->back();
-
+    }
+    // View Foods
+    public function viewFood(){
+        $data = Food::all();
+        return view('admin.viewFood',compact("data"));
     }
 
+    //delete food menu
+    public function deleteFood($id){
+        $delFood = Food::find($id);
+        $delFood->delete();
+        return redirect()->back();
+
+    }
     public function chef(){
         return view('admin.chef');
     }

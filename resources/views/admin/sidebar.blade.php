@@ -20,7 +20,15 @@
         <span class="menu-icon">
           <i class="mdi mdi-playlist-play"></i>
         </span>
-        <span class="menu-title">Foods</span>
+        <span class="menu-title">Add Food</span>
+      </a>
+    </li>
+    <li class="nav-item menu-items">
+      <a class="nav-link" href="{{url('/viewFood')}}">
+        <span class="menu-icon">
+          <i class="mdi mdi-playlist-play"></i>
+        </span>
+        <span class="menu-title">View Food</span>
       </a>
     </li>
     <li class="nav-item menu-items">

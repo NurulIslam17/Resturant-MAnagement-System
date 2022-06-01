@@ -19,7 +19,10 @@ Route::get("/del/{id}",[AdminConteroller::class,"deleteUser"]);
 Route::get("/food",[AdminConteroller::class,"food"]);
 // Add Food
 Route::post("/addFood",[AdminConteroller::class,"addFood"]);
-
+//view foods
+Route::get("/viewFood",[AdminConteroller::class,"viewFood"]);
+//delete food
+Route::get("/delFood/{id}",[AdminConteroller::class,"deleteFood"]);
 
 Route::middleware([
     'auth:sanctum',

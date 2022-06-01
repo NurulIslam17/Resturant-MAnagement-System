@@ -57,8 +57,12 @@
       margin: 0;
       font-weight: bold;
     }
+    img{
+        width: 100px;
+        height: 100px;
+        text-align: center;
+    }
   </style>
-
 </head>
 
 <body>
@@ -88,34 +92,30 @@
       <div class="main-panel">
         <div class="content-wrapper">
           <center>
-            <h1>User Information</h1>
+            <h1>View Food</h1>
             <table>
               <tr>
                 <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Description</th>
+                <th>Image</th>
                 <th class="actionTd">Action</th>
               </tr>
-              @foreach($data as $data)
-              <tr>
-                <td class="actionTd">{{$data->id}}</td>
-                <td>{{$data->name}}</td>
-                <td>{{$data->email}}</td>
-
-                @if($data->usertype=="0")
-                <td class="actionTd"><a href="{{url('/del',$data->id)}}">Delete</a></td>
-                @else
+             @foreach($data as $x)
+             <tr>
+                <td class="actionTd">{{$x->id}}</td>
+                <td>{{$x->title}}</td>
+                <td>{{$x->price}}৳</td>
+                <td>{{$x->desc}}</td>
+                <td><img src="/FoodImage/{{$x->image}}"></td>
                 <td class="actionTd">
-                  <p>Not Allowed(Admin)</p>
+                  <a href="{{url('/delFood',$x->id)}}">DELETE</a>
                 </td>
-                @endif
-
               </tr>
-              @endforeach
+             @endforeach
             </table>
           </center>
-
-
         </div>
       </div>
     </div>

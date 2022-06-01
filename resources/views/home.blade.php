@@ -29,6 +29,12 @@
 
     <link rel="stylesheet" href="assets/css/lightbox.css">
 
+    <style>
+        #menu{
+            padding:20px;
+        }
+    </style>
+
 </head>
 
 <body>
