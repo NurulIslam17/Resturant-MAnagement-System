@@ -13,7 +13,12 @@ Route::get("/food",[AdminConteroller::class,"food"]);
 Route::get("/chef",[AdminConteroller::class,"chef"]);
 Route::get("/reservation",[AdminConteroller::class,"reservation"]);
 
+// Delete users by Admin
 Route::get("/del/{id}",[AdminConteroller::class,"deleteUser"]);
+//Adding food menu by admin
+Route::get("/food",[AdminConteroller::class,"food"]);
+// Add Food
+Route::post("/addFood",[AdminConteroller::class,"addFood"]);
 
 
 Route::middleware([
