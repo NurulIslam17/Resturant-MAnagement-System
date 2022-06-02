@@ -27,6 +27,8 @@ Route::get("/delFood/{id}",[AdminConteroller::class,"deleteFood"]);
 Route::get("/updateFood/{updateId}",[AdminConteroller::class,"updateFood"]);
 //Update food menu
 Route::post("/update/{id}",[AdminConteroller::class,"update"]);
+//make a reservation
+Route::post("/reservation",[AdminConteroller::class,"reserveTable"]);
 
 Route::middleware([
     'auth:sanctum',
