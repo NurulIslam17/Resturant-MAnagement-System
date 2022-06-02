@@ -12,7 +12,8 @@
       width: 600px;
       padding: 10px;
     }
-    h1{
+
+    h1 {
       color: #000;
     }
 
@@ -66,8 +67,8 @@
               <div class="formContainer">
                 <h1>Food Menu Add Section</h1>
                 <form action="{{url('/addFood')}}" method="post" enctype="multipart/form-data">
-                @csrf  
-                <div class="inputDiv">
+                  @csrf
+                  <div class="inputDiv">
                     <label>Title</label>
                     <input type="text" name="title" placeholder="Food Title" required>
                   </div>

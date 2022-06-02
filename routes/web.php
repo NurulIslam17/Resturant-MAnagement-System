@@ -28,10 +28,16 @@ Route::get("/updateFood/{updateId}",[AdminConteroller::class,"updateFood"]);
 Route::post("/update/{id}",[AdminConteroller::class,"update"]);
 //make a reservation
 Route::post("/reservation",[AdminConteroller::class,"reserveTable"]);
-//reservatioh 
+//reservation
 Route::get("/reservation",[AdminConteroller::class,"reservation"]);
 //Deleting reservation data
 Route::get("/delReserve/{delReserve}",[AdminConteroller::class,"deleteReservation"]);
+
+//Add chef
+Route::get("/addChef",[AdminConteroller::class,"addChef"]);
+//Upload Chef
+Route::post("/uploadChef",[AdminConteroller::class,"uploadchef"]);
+
 
 Route::middleware([
     'auth:sanctum',
