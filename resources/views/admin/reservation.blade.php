@@ -6,7 +6,7 @@
   <title>Document</title>
   <style>
     .tableDiv {
-      background-color: #8ca7e6;
+      background-color: #dce5e6;
       padding: 10px;
       color: #000;
     }
@@ -14,12 +14,13 @@
     .tableDiv h1 {
       font-size: 30px;
       font-weight: bold;
+      margin-bottom: 5px;
     }
 
     table {
       border: 3px solid #FFF;
       padding: 3px;
-      width: 95%;
+      width: 100%;
     }
 
     table,
@@ -85,7 +86,7 @@
           <center>
 
             <div class="tableDiv">
-              <h1>Reservation</h1>
+              <h1>All Reservation Request</h1>
               <table>
                 <tr>
                   <th>Name</th>

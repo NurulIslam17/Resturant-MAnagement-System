@@ -30,6 +30,8 @@ Route::post("/update/{id}",[AdminConteroller::class,"update"]);
 Route::post("/reservation",[AdminConteroller::class,"reserveTable"]);
 //reservatioh 
 Route::get("/reservation",[AdminConteroller::class,"reservation"]);
+//Deleting reservation data
+Route::get("/delReserve/{delReserve}",[AdminConteroller::class,"deleteReservation"]);
 
 Route::middleware([
     'auth:sanctum',

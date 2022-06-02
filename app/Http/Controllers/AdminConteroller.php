@@ -106,4 +106,11 @@ class AdminConteroller extends Controller
         $data = reservation::all();
         return view('admin.reservation', compact("data"));
     }
+
+    // delete reservation
+    public function deleteReservation($delReserve){
+        $del = reservation::find($delReserve);
+        $del->delete();
+        return redirect()->back();
+    }
 }
