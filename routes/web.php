@@ -23,6 +23,10 @@ Route::post("/addFood",[AdminConteroller::class,"addFood"]);
 Route::get("/viewFood",[AdminConteroller::class,"viewFood"]);
 //delete food
 Route::get("/delFood/{id}",[AdminConteroller::class,"deleteFood"]);
+//Update(Edit) food menu
+Route::get("/updateFood/{updateId}",[AdminConteroller::class,"updateFood"]);
+//Update food menu
+Route::post("/update/{id}",[AdminConteroller::class,"update"]);
 
 Route::middleware([
     'auth:sanctum',

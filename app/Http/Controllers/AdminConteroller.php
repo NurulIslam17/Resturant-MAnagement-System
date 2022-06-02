@@ -49,10 +49,32 @@ class AdminConteroller extends Controller
         return redirect()->back();
 
     }
+    //update food
+    public function updateFood($id){
+        $data = Food::find($id);
+        return view('admin.updateFood',compact("data"));
+    }
+    //Update food menu
+    public function update(Request $request,$id){
+        $data = Food::find($id);
+        $data->title = $request->title;
+        $data->price = $request->price;
+        $data->desc = $request->desc;
+
+        $image=$request->img;
+        $imageName = time().'.'.$image->getClientOriginalExtension();
+        $request->img-> move('FoodImage',$imageName);
+        $data->image=$imageName;
+        $data->Save();
+        return redirect('/viewFood');
+    }
+
+    //chef
     public function chef(){
         return view('admin.chef');
     }
 
+    //reservetion
     public function reservation(){
         return view('admin.reservation');
     }
