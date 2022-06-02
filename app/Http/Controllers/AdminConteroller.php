@@ -103,6 +103,7 @@ class AdminConteroller extends Controller
     //reservetion
     public function reservation()
     {
-        return view('admin.reservation');
+        $data = reservation::all();
+        return view('admin.reservation', compact("data"));
     }
 }

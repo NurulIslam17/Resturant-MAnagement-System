@@ -11,7 +11,6 @@ Route::get("/redirects",[HomeController::class,"redirect"]);
 Route::get("/user",[AdminConteroller::class,"user"]);
 Route::get("/food",[AdminConteroller::class,"food"]);
 Route::get("/chef",[AdminConteroller::class,"chef"]);
-Route::get("/reservation",[AdminConteroller::class,"reservation"]);
 
 // Delete users by Admin
 Route::get("/del/{id}",[AdminConteroller::class,"deleteUser"]);
@@ -29,6 +28,8 @@ Route::get("/updateFood/{updateId}",[AdminConteroller::class,"updateFood"]);
 Route::post("/update/{id}",[AdminConteroller::class,"update"]);
 //make a reservation
 Route::post("/reservation",[AdminConteroller::class,"reserveTable"]);
+//reservatioh 
+Route::get("/reservation",[AdminConteroller::class,"reservation"]);
 
 Route::middleware([
     'auth:sanctum',
