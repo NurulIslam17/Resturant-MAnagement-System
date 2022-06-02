@@ -110,6 +110,7 @@ class AdminConteroller extends Controller
         $chefData->save();
         return redirect('/chef');
     }
+
     //chef
     public function chef()
     {

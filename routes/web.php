@@ -38,6 +38,8 @@ Route::get("/addChef",[AdminConteroller::class,"addChef"]);
 //Upload Chef
 Route::post("/uploadChef",[AdminConteroller::class,"uploadchef"]);
 
+//chef in home page
+Route::get("/chefDisplay",[HomeController::class,"chefDisplay"]);
 
 Route::middleware([
     'auth:sanctum',
