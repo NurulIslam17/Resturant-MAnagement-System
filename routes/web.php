@@ -40,6 +40,8 @@ Route::post("/uploadChef",[AdminConteroller::class,"uploadchef"]);
 
 //chef in home page
 Route::get("/chefDisplay",[HomeController::class,"chefDisplay"]);
+//chef data delete 
+Route::get("/deleteChef/{delChef}",[AdminConteroller::class,"chefDelete"]);
 
 Route::middleware([
     'auth:sanctum',

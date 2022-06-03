@@ -95,7 +95,7 @@
         <div class="content-wrapper">
           <center>
             <div class="chefTable">
-              <h1>All Chef for the Service</h1>
+              <h1>All Chefs for the Service</h1>
               <table>
                 <tr>
                   <th>Id</th>
@@ -112,8 +112,8 @@
                   <td class="imgTd"><img src="ChefImage/{{$x->image}}"></td>
                   <td class="center ">
                     <div class="btn">
-                      <a class="update" href="{{url('/updateChef/',$x->id)}}">Update</a>
-                      <a class="delete" href="{{url('/deleteChef/',$x->id)}}">Delete</a>
+                      <a class="update" href="{{url('/updateChef',$x->id)}}">Update</a>
+                      <a class="delete" href="{{url('/deleteChef',$x->id)}}">Delete</a>
                     </div>
                   </td>
                 </tr>

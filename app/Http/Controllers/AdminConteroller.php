@@ -117,6 +117,14 @@ class AdminConteroller extends Controller
         $chef = Chef::all();
         return view('admin.chef',compact("chef"));
     }
+    //chef delete
+    public function chefDelete($delChef){
+        $del = Chef::find($delChef);
+        $del->delete();
+        return redirect()->back();
+    }
+
+
 
     //reservetion
     public function reservation()
