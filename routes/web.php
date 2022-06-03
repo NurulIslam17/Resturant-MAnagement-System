@@ -26,6 +26,7 @@ Route::get("/delFood/{id}",[AdminConteroller::class,"deleteFood"]);
 Route::get("/updateFood/{updateId}",[AdminConteroller::class,"updateFood"]);
 //Update food menu
 Route::post("/update/{id}",[AdminConteroller::class,"update"]);
+
 //make a reservation
 Route::post("/reservation",[AdminConteroller::class,"reserveTable"]);
 //reservation
@@ -33,15 +34,22 @@ Route::get("/reservation",[AdminConteroller::class,"reservation"]);
 //Deleting reservation data
 Route::get("/delReserve/{delReserve}",[AdminConteroller::class,"deleteReservation"]);
 
+
 //Add chef
 Route::get("/addChef",[AdminConteroller::class,"addChef"]);
 //Upload Chef
 Route::post("/uploadChef",[AdminConteroller::class,"uploadchef"]);
-
 //chef in home page
 Route::get("/chefDisplay",[HomeController::class,"chefDisplay"]);
 //chef data delete 
 Route::get("/deleteChef/{delChef}",[AdminConteroller::class,"chefDelete"]);
+//chef data edit
+Route::get("/updateChef/{upChef}",[AdminConteroller::class,"updateChef"]);
+//chef data update
+Route::post("/upChef/{id}",[AdminConteroller::class,"chefUpdate"]);
+
+
+
 
 Route::middleware([
     'auth:sanctum',

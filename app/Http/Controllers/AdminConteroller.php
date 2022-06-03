@@ -94,18 +94,20 @@ class AdminConteroller extends Controller
         return redirect()->back();
     }
     //add chef
-    public function addChef(){
+    public function addChef()
+    {
         return view('admin.addChef');
     }
     //Upload chef
-    public function uploadchef(Request $request){
+    public function uploadchef(Request $request)
+    {
         $chefData = new Chef();
         $chefData->name = $request->name;
         $chefData->speciality = $request->speciality;
 
-        $chefImg= $request->image;
-        $imageName = time().'.'.$chefImg->getClientOriginalExtension();
-        $chefImg->move('ChefImage',$imageName);
+        $chefImg = $request->image;
+        $imageName = time() . '.' . $chefImg->getClientOriginalExtension();
+        $chefImg->move('ChefImage', $imageName);
         $chefData->image = $imageName;
         $chefData->save();
         return redirect('/chef');
@@ -115,15 +117,37 @@ class AdminConteroller extends Controller
     public function chef()
     {
         $chef = Chef::all();
-        return view('admin.chef',compact("chef"));
+        return view('admin.chef', compact("chef"));
     }
     //chef delete
-    public function chefDelete($delChef){
+    public function chefDelete($delChef)
+    {
         $del = Chef::find($delChef);
         $del->delete();
         return redirect()->back();
     }
+    //edit chef
+    public function updateChef($upChef)
+    {
+        $update = Chef::find($upChef);
+        return view('admin.updatechef', compact("update"));
+    }
 
+    //update chef
+    public function chefUpdate(Request $request, $id)
+    {
+        $data = Chef::find($id);
+
+        $data->name = $request->name;
+        $data->speciality = $request->speciality;
+
+        $chefImg = $request->image;
+        $imageName = time() . '.' . $chefImg->getClientOriginalExtension();
+        $chefImg->move('ChefImage', $imageName);
+        $data->image = $imageName;
+        $data->save();
+        return redirect('/chef');
+    }
 
 
     //reservetion
@@ -134,7 +158,8 @@ class AdminConteroller extends Controller
     }
 
     // delete reservation
-    public function deleteReservation($delReserve){
+    public function deleteReservation($delReserve)
+    {
         $del = reservation::find($delReserve);
         $del->delete();
         return redirect()->back();

@@ -29,6 +29,7 @@
     .inpDiv {
       margin-top: 20px;
     }
+
     .inpDiv input {
       font-size: 18px;
     }
@@ -76,7 +77,6 @@
                 <div class="inpDiv">
                   <input class="upload" type="submit" value="Upload Chef Information">
                 </div>
-
               </form>
             </div>
           </center>
