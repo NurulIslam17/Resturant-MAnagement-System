@@ -18,11 +18,12 @@ class HomeController extends Controller
     public function redirect()
     {
         $data = Food::all();
+        $chef = Chef::all();
         $userType = Auth::user()->usertype;
         if($userType=='1'){
             return view('admin.adminHome');
         }else{
-            return view('home',compact("data"));
+            return view('home',compact("data","chef"));
         }
     }
 }

@@ -114,7 +114,8 @@ class AdminConteroller extends Controller
     //chef
     public function chef()
     {
-        return view('admin.chef');
+        $chef = Chef::all();
+        return view('admin.chef',compact("chef"));
     }
 
     //reservetion
