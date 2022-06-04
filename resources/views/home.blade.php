@@ -30,8 +30,8 @@
     <link rel="stylesheet" href="assets/css/lightbox.css">
 
     <style>
-        #menu{
-            padding:20px;
+        #menu {
+            padding: 20px;
         }
     </style>
 
@@ -88,34 +88,44 @@
                             </li> -->
                             <!-- <li class=""><a rel="sponsored" href="https://templatemo.com" target="_blank">External URL</a></li> -->
                             <li class="scroll-to-section"><a href="#reservation">Contact Us</a></li>
+                            <li class="scroll-to-section">
+                                <a href="#">
+                                    @auth
+                                    Cart[{{$count}}]
+                                    @endauth
+                                    @guest
+                                    Cart[0]
+                                    @endguest
+                                </a>
+                            </li>
                             <li>
                                 @if (Route::has('login'))
                                 <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                                     @auth
-                                   <li>
-                                   <x-app-layout> </x-app-layout>
-                                   </li>
-                                    @else
-                                  <li>  <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a></li>
-
-                                    @if (Route::has('register'))
-                                    <li>
-                                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                                    </li>
-                                    @endif
-                                    @endauth
-                                </div>
-                                @endif
+                            <li>
+                                <x-app-layout> </x-app-layout>
                             </li>
+                            @else
+                            <li> <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a></li>
 
-                        </ul>
-                        <a class='menu-trigger'>
-                            <!-- <span>Menu</span> -->
-                        </a>
-                        <!-- ***** Menu End ***** -->
-                    </nav>
+                            @if (Route::has('register'))
+                            <li>
+                                <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                            </li>
+                            @endif
+                            @endauth
                 </div>
+                @endif
+                </li>
+
+                </ul>
+                <a class='menu-trigger'>
+                    <!-- <span>Menu</span> -->
+                </a>
+                <!-- ***** Menu End ***** -->
+                </nav>
             </div>
+        </div>
         </div>
     </header>
     <!-- ***** Header Area End ***** -->
