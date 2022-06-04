@@ -43,26 +43,24 @@
 
     .actionTd a {
       text-decoration: none;
-      border: 1px solid red;
       background-color: red;
-      padding: 2px 10px;
+      padding: 5px 10px;
       color: #fff;
-      border-radius: 28px;
       font-weight: bold;
     }
     .actionTd .update{
-      background-color: greenyellow;
+      background-color: blue;
       text-decoration: none;
-      border: 1px solid greenyellow;
-      padding: 2px 10px;
-      color: #000;
-      border-radius: 28px;
+      padding: 5px 10px;
       font-weight: bold;
     }
     img{
-        width: 100px;
+        width: 100%;
         height: 100px;
         text-align: center;
+    }
+    .imgTd {
+      width: 140px;
     }
   </style>
 </head>
@@ -92,7 +90,7 @@
                 <td>{{$x->title}}</td>
                 <td>{{$x->price}}৳</td>
                 <td>{{$x->desc}}</td>
-                <td><img src="/FoodImage/{{$x->image}}"></td>
+                <td><img class="imgTd img" src="/FoodImage/{{$x->image}}"></td>
                 <td class="actionTd">
                   <a href="{{url('/delFood',$x->id)}}">DELETE</a>
                   <a class="update" href="{{url('/updateFood',$x->id)}}">Update</a>
