@@ -9,8 +9,8 @@
   <style>
     .ordersMain {
       background-color: #f7f1e3;
-      width: 95%;
-      padding: 10px;
+      width: 100%;
+      padding: 3px;
       color: #000;
     }
 
@@ -21,7 +21,7 @@
     }
 
     table {
-      width: 95%;
+      width: 97%;
       border: 2px solid #000;
     }
 
@@ -59,6 +59,12 @@
     <div class="container-fluid page-body-wrapper">
       <div class="main-panel">
         <div class="content-wrapper">
+          <div class="mb-2">
+            <form action="/search" method="get">
+              <input type="text" name="search" style="color:#000">
+              <input type="submit" value="search" class="btn btn-primary">
+            </form>
+          </div>
           <center>
             <div class="ordersMain">
               <h1>Orders Information</h1>
@@ -70,6 +76,7 @@
                   <th>Food</th>
                   <th>price</th>
                   <th>Quantity</th>
+                  <th>Total</th>
                 </tr>
 
                 @foreach($order as $od)
@@ -80,6 +87,7 @@
                   <td> {{ $od -> food_name}}</td>
                   <td> {{ $od -> price}}৳</td>
                   <td> {{ $od -> quantity}}</td>
+                  <td> {{ $od -> price * $od -> quantity}}৳</td>
                 </tr>
 
                 @endforeach

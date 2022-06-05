@@ -150,13 +150,6 @@ class AdminConteroller extends Controller
         return redirect('/chef');
     }
 
-    // oreder view admin
-    public function orders(){
-        $order = Order::all();
-        return view('admin.orders',compact("order"));
-    }
-
-
     //reservetion
     public function reservation()
     {
@@ -170,5 +163,20 @@ class AdminConteroller extends Controller
         $del = reservation::find($delReserve);
         $del->delete();
         return redirect()->back();
+    }
+
+    // oreder view admin
+    public function orders()
+    {
+        $order = Order::all();
+        return view('admin.orders', compact("order"));
+    }
+
+    //search
+    public function search(Request $request)
+    {
+        $search = $request->search;
+        $order = Order::where('user_name','like','%'.$search.'%')->get();
+        return view('admin.orders', compact("order"));
     }
 }

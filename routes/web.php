@@ -58,6 +58,8 @@ Route::get("/removeCart/{id}",[HomeController::class,"removeCart"]);
 Route::post("/orderedConform",[HomeController::class,"orderedConform"]);
 //orders view by admin
 Route::get("/orders",[AdminConteroller::class,"orders"]);
+//search
+Route::get("/search",[AdminConteroller::class,"search"]);
 
 
 Route::middleware([
