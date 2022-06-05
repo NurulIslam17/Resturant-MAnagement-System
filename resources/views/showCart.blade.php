@@ -49,27 +49,32 @@
 
     }
 
-    table,
-    th,
-    td {
-      border: 1px solid #000;
-    }
+
 
     th {
       font-size: 22px;
-      background-color: #a29bfe;
+      background-color: #0984e3;
       padding-left: 10px;
       font-weight: bold;
-      color: #000;
+      color: #fff;
     }
 
     td {
       font-size: 18px;
       padding-left: 10px;
     }
+    .remove{
+      padding: 0px  5px;
+    }
 
     tr:nth-child(odd) {
       background-color: #dfe6e9;
+    }
+
+    .actionTr {
+      position: relative;
+      top: -60px;
+      right: -360px;
     }
   </style>
 
@@ -142,7 +147,7 @@
 
   <center>
     <div class="tableDiv">
-      <h1>All The Cart Item</h1>
+      <h1>All The Cart Items</h1>
       <table>
         <tr>
           <th>Food Name</th>
@@ -155,8 +160,18 @@
           <td>{{$x->title}}</td>
           <td>{{$x->price}}</td>
           <td>{{$x->quantity}}</td>
-          <td>action</td>
         </tr>
+        @endforeach
+
+        @foreach($delId as $y)
+
+        <tr style="position: relative; top:-60px; right:-610px">
+          <td>
+            <a class="btn btn-danger remove" href="{{url('/removeCart',$y->id)}}">Remove</a>
+          </td>
+        </tr>
+
+
         @endforeach
       </table>
     </div>

@@ -52,6 +52,8 @@ Route::post("/upChef/{id}",[AdminConteroller::class,"chefUpdate"]);
 Route::post("/addCart/{id}",[HomeController::class,"addCart"]);
 //show Card
 Route::get("/showCart/{id}",[HomeController::class,"showCart"]);
+//remove cart
+Route::get("/removeCart/{id}",[HomeController::class,"removeCart"]);
 
 
 Route::middleware([
