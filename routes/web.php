@@ -54,6 +54,8 @@ Route::post("/addCart/{id}",[HomeController::class,"addCart"]);
 Route::get("/showCart/{id}",[HomeController::class,"showCart"]);
 //remove cart
 Route::get("/removeCart/{id}",[HomeController::class,"removeCart"]);
+//orderedConform
+Route::post("/orderedConform",[HomeController::class,"orderedConform"]);;
 
 
 Route::middleware([

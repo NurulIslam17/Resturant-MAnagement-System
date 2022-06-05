@@ -83,7 +83,7 @@
       width: 30%;
       padding: 10px 20px;
       margin-top: 20px;
-      display: none; 
+      display: none;
     }
 
     label {
@@ -94,15 +94,18 @@
       font-weight: bold;
     }
 
-    .btnConfirm, .btnCancle {
+    .btnConfirm,
+    .btnCancle {
       background-color: green !important;
       color: #FFF;
-      padding: 6px;
-      font-size: 20px !important;
+      padding: 5px;
+      font-size: 18px !important;
       font-weight: bold !important;
+      border: none;
     }
+
     .btnCancle {
-      background-color: red!important;
+      background-color: red !important;
     }
 
     .inpfield {
@@ -187,67 +190,73 @@
           <th>Quantity</th>
           <th>Action</th>
         </tr>
-        @foreach($data as $x)
-        <tr>
-          <td>{{$x->title}}</td>
-          <td>{{$x->price}}</td>
-          <td>{{$x->quantity}}</td>
-        </tr>
-        @endforeach
 
-        @foreach($delId as $y)
+        <form action="{{url('/orderedConform')}}" method="POST">
+          @csrf
+          @foreach($data as $x)
+            <tr>
+              <td>
+                <input type="text" name="fName[]" value="{{$x->title}}" hidden>
+                {{$x->title}}
+              </td>
+              <td>
+                <input type="text" name="fprice[]" value="{{$x->price}}" hidden>
+                {{$x->price}}
+              </td>
+              <td>
+                <input type="text" name="fquantity[]" value="{{$x->quantity}}" hidden>
+                {{$x->quantity}}
+              </td>
+            </tr>
+          @endforeach
 
-        <tr style="position: relative; top:-60px; right:-610px">
-          <td>
-            <a class="btn btn-danger remove" href="{{url('/removeCart',$y->id)}}">Remove</a>
-          </td>
-        </tr>
+            @foreach($delId as $y)
+              <tr style="position: relative; top:-60px; right:-610px">
+                <td>
+                  <a class="btn btn-danger remove" href="{{url('/removeCart',$y->id)}}">Remove</a>
+                </td>
+              </tr>
+            @endforeach
+            </table>
+            <div>
+              <button type="button" class="btn btn-primary mt-4" id="order">Order Now</button>
+            </div>
+          </div>
+            <div class="orderForm" id="appear">
+              <div class="inpfield">
+                <label>Name</label>
+                <input type="text" name="name" placeholder="Enter Name">
+              </div>
+              <div class="inpfield">
+                <label>Phone</label>
+                <input type="text" name="phone" placeholder="Enter Phone">
+              </div>
+              <div class="inpfield">
+                <label>Address</label>
+                <input type="text" name="address" placeholder="Enter Address">
+              </div>
 
-
-        @endforeach
-      </table>
-      <div>
-        <button class="btn btn-primary mt-4" id="order">Order Now</button>
-      </div>
-    </div>
-
-    <div class="orderForm" id="appear">
-      <form>
-        <div class="inpfield" >
-          <label>Name</label>
-          <input type="text" name="name" placeholder="Enter Name">
-        </div>
-        <div class="inpfield">
-          <label>Phone</label>
-          <input type="text" name="phone" placeholder="Enter Phone">
-        </div>
-        <div class="inpfield">
-          <label>Address</label>
-          <input type="text" name="address" placeholder="Enter Address">
-        </div>
-
-        <div class="inpfield">
-          <input type="submit" value="Order Confirm" class="btnConfirm">
-          <input id="cancle" type="submit" value="Cancle" class="btnCancle">
-        </div>
-      </form>
-    </div>
+              <div class="inpfield">
+                <input type="submit" value="Order Confirm" class="btnConfirm">
+                <input id="cancle" type="button" value="Close" class="btnCancle">
+              </div>
+            </div>
+        </form>
   </center>
 
 
   <script>
     $("#order").click(
-      function(){
+      function() {
         $("#appear").show();
       }
     );
 
     $("#cancle").click(
-      function(){
+      function() {
         $("appear").hide();
       }
     );
-  
   </script>
 
   <!-- jQuery -->

@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Food;
 use App\Models\Chef;
 use App\Models\Cart;
+use App\Models\Order;
 
 class HomeController extends Controller
 {
@@ -53,14 +54,32 @@ class HomeController extends Controller
     {
         $count = Cart::where('user_id', $id)->count();
         $data = Cart::where('user_id', $id)->join('food', 'carts.food_id', '=', 'food.id')->get();
-        $delId = Cart::select('*')->where('user_id','=',$id)->get();
-        return view('showCart', compact("count", "data","delId"));
+        $delId = Cart::select('*')->where('user_id', '=', $id)->get();
+        return view('showCart', compact("count", "data", "delId"));
     }
 
     public function removeCart($id)
     {
         $remove = Cart::find($id);
         $remove->delete();
+        return redirect()->back();
+    }
+
+    // orderedConform
+
+    public function orderedConform(Request $request)
+    {
+        foreach ($request->fName  as $key => $fName) 
+        {
+            $data = new Order();
+            $data->food_name = $fName;
+            $data->price = $request->fprice[$key];
+            $data->quantity = $request->fquantity[$key];
+            $data->user_name = $request->name;
+            $data->phone = $request->phone;
+            $data->address = $request->address;
+            $data->save();
+        }
         return redirect()->back();
     }
 }
