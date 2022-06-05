@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Food;
 use App\Models\reservation;
 use App\Models\Chef;
+use App\Models\Order;
 
 class AdminConteroller extends Controller
 {
@@ -147,6 +148,12 @@ class AdminConteroller extends Controller
         $data->image = $imageName;
         $data->save();
         return redirect('/chef');
+    }
+
+    // oreder view admin
+    public function orders(){
+        $order = Order::all();
+        return view('admin.orders',compact("order"));
     }
 
 
