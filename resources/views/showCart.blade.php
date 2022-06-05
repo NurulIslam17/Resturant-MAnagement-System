@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="assets/css/owl-carousel.css">
 
   <link rel="stylesheet" href="assets/css/lightbox.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
   <style>
     #menu {
@@ -49,8 +50,6 @@
 
     }
 
-
-
     th {
       font-size: 22px;
       background-color: #0984e3;
@@ -63,8 +62,9 @@
       font-size: 18px;
       padding-left: 10px;
     }
-    .remove{
-      padding: 0px  5px;
+
+    .remove {
+      padding: 0px 5px;
     }
 
     tr:nth-child(odd) {
@@ -75,6 +75,38 @@
       position: relative;
       top: -60px;
       right: -360px;
+    }
+
+    /* .................................. */
+    .orderForm {
+      background-color: #D6A2E8;
+      width: 30%;
+      padding: 10px 20px;
+      margin-top: 20px;
+      display: none; 
+    }
+
+    label {
+      display: inline-block;
+      width: 100px;
+      text-align: left;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .btnConfirm, .btnCancle {
+      background-color: green !important;
+      color: #FFF;
+      padding: 6px;
+      font-size: 20px !important;
+      font-weight: bold !important;
+    }
+    .btnCancle {
+      background-color: red!important;
+    }
+
+    .inpfield {
+      margin-bottom: 10px;
     }
   </style>
 
@@ -174,10 +206,49 @@
 
         @endforeach
       </table>
+      <div>
+        <button class="btn btn-primary mt-4" id="order">Order Now</button>
+      </div>
+    </div>
+
+    <div class="orderForm" id="appear">
+      <form>
+        <div class="inpfield" >
+          <label>Name</label>
+          <input type="text" name="name" placeholder="Enter Name">
+        </div>
+        <div class="inpfield">
+          <label>Phone</label>
+          <input type="text" name="phone" placeholder="Enter Phone">
+        </div>
+        <div class="inpfield">
+          <label>Address</label>
+          <input type="text" name="address" placeholder="Enter Address">
+        </div>
+
+        <div class="inpfield">
+          <input type="submit" value="Order Confirm" class="btnConfirm">
+          <input id="cancle" type="submit" value="Cancle" class="btnCancle">
+        </div>
+      </form>
     </div>
   </center>
 
 
+  <script>
+    $("#order").click(
+      function(){
+        $("#appear").show();
+      }
+    );
+
+    $("#cancle").click(
+      function(){
+        $("appear").hide();
+      }
+    );
+  
+  </script>
 
   <!-- jQuery -->
   <script src="assets/js/jquery-2.1.0.min.js"></script>
